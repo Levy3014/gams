@@ -57,8 +57,10 @@
       { name: "2048", url: "2048.html" },
       { name: "Drive Mad", url: "drivemad.html" },
       { name: "Gunspin", url: "gunspin.html" },
-      { name: "Snow Rider", url: "snowrider.html" }
-      // Add any other simple games you want here
+      { name: "Snow Rider", url: "snowrider.html" },
+      { name: "Rocket League", url: "RocketLeague" },
+      { name: "Moto X3M", url: "motox3m" },
+      { name: "Retro Bowl", url: "retrobowl" }
     ];
 
     const buttonsContainer = document.getElementById("buttonsContainer");
@@ -71,7 +73,7 @@
       );
       filteredGames.forEach(game => {
         const btn = document.createElement("button");
-        btn.textContent = `Play ${game.name}`;
+        btn.textContent = game.name;  // Removed "Play" prefix
         btn.onclick = () => launchGame(game.url);
         buttonsContainer.appendChild(btn);
       });
