@@ -53,18 +53,17 @@
   <div id="buttonsContainer"></div>
 
   <script>
-    // Your game list here (edit this or generate later)
     const games = [
-      { name: "Raft Wars 2", url: "https://sch00l.work.gd/raftwars2" },
-      { name: "Fireboy and Watergirl", url: "https://fireboywatergirl.example.com" },
-      { name: "Cool Game 3", url: "https://coolgame3.example.com" },
-      // Add more games here
+      { name: "2048", url: "2048.html" },
+      { name: "Drive Mad", url: "drivemad.html" },
+      { name: "Gunspin", url: "gunspin.html" },
+      { name: "Snow Rider", url: "snowrider.html" }
+      // Add any other simple games you want here
     ];
 
     const buttonsContainer = document.getElementById("buttonsContainer");
     const searchInput = document.getElementById("searchInput");
 
-    // Create buttons for all games matching the filter
     function renderButtons(filter = "") {
       buttonsContainer.innerHTML = "";
       const filteredGames = games.filter(game =>
@@ -81,7 +80,6 @@
       }
     }
 
-    // Open a new about:blank tab with iframe for the game
     function launchGame(gameUrl) {
       const gameWindow = window.open("about:blank", "_blank");
       const html = `
@@ -102,12 +100,10 @@
       gameWindow.document.close();
     }
 
-    // Filter buttons as user types
     searchInput.addEventListener("input", () => {
       renderButtons(searchInput.value);
     });
 
-    // Initial render
     renderButtons();
   </script>
 </body>
